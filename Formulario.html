@@ -27,7 +27,7 @@
         </div>
         
         <div class="form-group">
-            <label for="metodoPago">Método de Pago (Simulado):</label>
+            <label for="metodoPago">Método de Pago:</label>
             <select class="form-control" id="metodoPago">
                 <option>Tarjeta de Crédito / Débito</option>
                 <option>PayPal</option>
@@ -49,13 +49,12 @@
             return; 
         }
 
-        // 1. Guardar el correo en el almacenamiento local para usarlo después
         localStorage.setItem('correoCliente', correo);
 
-        // 2. Redirigir a la página de confirmación
-        window.location.href = 'pago-simulado.html';
+        window.location.href = 'Resultado.html';
     }
 </script>
 </body>
 
 </html>
+
