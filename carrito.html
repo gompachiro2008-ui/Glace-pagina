@@ -219,9 +219,10 @@
             const totalConEnvio = subtotalGeneral + COSTO_ENVIO;
             document.getElementById('subtotal-general').innerText = `$${subtotalGeneral.toFixed(2)}`;
             document.getElementById('total-final').innerHTML = `<strong>$${totalConEnvio.toFixed(2)}</strong>`;
+            localStorage.setItem('totalPago', totalConEnvio.toFixed(2));
             if (subtotalGeneral === 0) {
                 cuerpoTabla.innerHTML = '<tr><td colspan="4" class="text-center">¡Tu carrito está vacío! Vuelve a la <a href="Menu.html">tienda</a> para agregar productos.</td></tr>';
-                document.getElementById('total-final').innerHTML = '<strong>$' + COSTO_ENVIO.toFixed(2) + '</strong>'; // Solo muestra el costo de envío
+                document.getElementById('total-final').innerHTML = '<strong>$' + COSTO_ENVIO.toFixed(2) + '</strong>';
             }
         }
         function actualizarCantidad(id, nuevaCantidad) {
