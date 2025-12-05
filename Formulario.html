@@ -62,10 +62,12 @@
         }
 
         localStorage.setItem('correoCliente', correo);
-
+        localStorage.removeItem('carrito');
+        localStorage.removeItem('totalPago');
         window.location.href = 'Resultado.html';
     }
 </script>
 </body>
 </html>
+
 
