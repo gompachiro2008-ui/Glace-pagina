@@ -35,12 +35,24 @@
             </select>
         </div>
         
-        <button onclick="finalizarCompra()" class="btn btn-finalizar btn-lg btn-block mt-4">Pagar $99.98 (Simulado)</button>
+       <button id="botonPago" onclick="finalizarCompra()" class="btn btn-finalizar btn-lg btn-block mt-4">Cargando Total...</button> 
         
     </div>
 </div>
 
 <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const botonPago = document.getElementById('botonPago');
+        let total = localStorage.getItem('totalPago'); 
+
+        if (botonPago) {
+            if (total && !isNaN(parseFloat(total))) {
+                botonPago.textContent = `Pagar $${total} `;
+            } else {
+                botonPago.textContent = `Sin Productos`; 
+            }
+        }
+    });
     function finalizarCompra() {
         const correo = document.getElementById('emailInput').value;
 
@@ -56,4 +68,3 @@
 </script>
 </body>
 </html>
-
